@@ -8,6 +8,6 @@ describe('components/diamond', () => {
         render(<Diamond />)
 
         const element = screen.getByTestId('diamond')
-        expect(element).toHaveTextContent('A')
+        expect(element).toHaveTextContent('_A_\nB_B\n_A_')
     })
 })
