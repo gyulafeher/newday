@@ -16,13 +16,6 @@ const getDiamondArray = (alphabet, midpointLetter) => {
             }).join('')
         }
 
-        //midpoint
-        if (index === midpointPosition) {
-            return Array(diamondLength).fill(DEFAULT_FILL).map((val, index2) => {
-                return index2 === 0 || index2 === (lastIndex) ? letters[index] : val
-            }).join('')
-        }
-
         //passed midpoint
         if (index > midpointPosition) {
             return Array(diamondLength).fill(DEFAULT_FILL).map((val, index2) => {
