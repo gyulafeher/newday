@@ -4,6 +4,7 @@ function Diamond() {
     <div
       data-testid='diamond'
     >
+      A
     </div>
   );
 }
