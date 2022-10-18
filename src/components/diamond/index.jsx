@@ -9,6 +9,13 @@ function Diamond({ midpointLetter, alphabet }) {
 
     return Array(diamondLength).fill(null).map((val, index) => {
 
+      //first, last
+      if (index === 0 || index === diamondLength - 1) {
+        return Array(diamondLength).fill('_').map((val, index1) => {
+          return midpointPosition === index1 ? letters[0] : val
+        }).join('')
+      }
+
       //midpoint
       if (index === midpointPosition) {
         return Array(diamondLength).fill('_').map((val, index2) => {
@@ -16,10 +23,22 @@ function Diamond({ midpointLetter, alphabet }) {
         }).join('')
       }
 
-      return Array(diamondLength).fill('_').map((val, index1) => {
-        return midpointPosition === index1 ? letters[0] : val
-      }).join('')
+      //passed midpoint
+      if (index > midpointPosition) {
+        return Array(diamondLength).fill('_').map((val, index2) => {
+          if (index2 > midpointPosition) {
+            return index2 === (diamondLength - 1 - (index - midpointPosition)) ? letters[index2 - midpointPosition] : val
+          }
+          return index2 === (index - midpointPosition) ? letters[midpointPosition - index2] : val
+        }).join('')
+      }
 
+      return Array(diamondLength).fill('_').map((val, index2) => {
+        if (index2 > midpointPosition) {
+          return index2 === (midpointPosition + index) ? letters[index] : val
+        }
+        return index2 === (midpointPosition - index) ? letters[index] : val
+      }).join('')
 
     })
   }
