@@ -2,7 +2,7 @@
 const diamondConfig =
 {
     alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
-    midpointLetter: 'B',
+    midpointLetter: 'C',
 }
 
 export default diamondConfig
