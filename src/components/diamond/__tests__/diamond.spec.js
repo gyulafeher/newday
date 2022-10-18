@@ -7,8 +7,8 @@ import Diamond from '../index'
 describe('components/diamond', () => {
     it('should match diamond text for B complexity', () => {
         render(<Diamond
-            midpointLetter={diamondConfig.midpointLetter}
-            alphabet="B"
+            midpointLetter="B"
+            alphabet={diamondConfig.alphabet}
         />)
         const expectedDiamond = [
             '_A_',
