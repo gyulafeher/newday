@@ -33,4 +33,22 @@ describe('components/diamond', () => {
         const element = screen.getByTestId('diamond')
         expect(element).toHaveTextContent(expectedDiamond)
     })
+
+    it('should match diamond text for D complexity', () => {
+        render(<Diamond
+            midpointLetter="D"
+            alphabet={diamondConfig.alphabet}
+        />)
+        const expectedDiamond = [
+            '___A___',
+            '__B_B__',
+            '_C___C_',
+            'D_____D',
+            '_C___C_',
+            '__B_B__',
+            '___A___',
+        ].join(' ')
+        const element = screen.getByTestId('diamond')
+        expect(element).toHaveTextContent(expectedDiamond)
+    })
 })
